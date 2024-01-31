@@ -46,7 +46,7 @@ public class WxMpLinkClient {
             log.info("URL Link 生成, jsCode:{}", JSON.toJSONString(generateUrlLinkRequest));
             String generate = wxMaService.getLinkService().generateUrlLink(generateUrlLinkRequest);
             log.info("URL Link 生成, 返回结果:{}", generate);
-            return R.success("生成成功", generate);
+            return R.ok("生成成功", generate);
         } catch (WxErrorException e) {
             log.error("URL Link 生成", e);
             return R.failure("URL Link 生成, 稍等一下马上就好");
@@ -77,7 +77,7 @@ public class WxMpLinkClient {
             log.info("URL Link 生成, jsCode:{}", JSON.toJSONString(generateUrlLinkRequest));
             String generate = wxMaService.getLinkService().generateShortLink(generateUrlLinkRequest);
             log.info("URL Link 生成, 返回结果:{}", generate);
-            return R.success("生成成功", generate);
+            return R.ok("生成成功", generate);
         } catch (WxErrorException e) {
             if (e.getError().getErrorCode() == 43104) {
                 return R.failure("此小程序暂时没有权限生成短链");
