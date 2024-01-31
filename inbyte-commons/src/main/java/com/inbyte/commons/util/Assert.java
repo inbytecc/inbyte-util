@@ -1,7 +1,7 @@
 package com.inbyte.commons.util;
 
-import com.inbyte.commons.exception.PyrangeNullException;
-import com.inbyte.commons.exception.PyrangeParamException;
+import com.inbyte.commons.exception.InbyteNullException;
+import com.inbyte.commons.exception.InbyteParamException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -22,13 +22,13 @@ public class Assert {
     public static void ok(Object o) {
         Set<ConstraintViolation<Object>> violations = VALIDATOR.validate(o);
         for (ConstraintViolation<Object> violation : violations) {
-            throw PyrangeParamException.failure(violation.getMessage());
+            throw InbyteParamException.failure(violation.getMessage());
         }
     }
 
     public static void notNull(Object o, String message) {
         if (o == null) {
-            throw PyrangeNullException.msg(message);
+            throw InbyteNullException.msg(message);
         }
     }
 

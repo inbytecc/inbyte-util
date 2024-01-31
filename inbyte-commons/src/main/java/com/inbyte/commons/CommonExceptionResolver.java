@@ -1,7 +1,7 @@
 package com.inbyte.commons;
 
-import com.inbyte.commons.exception.PyrangeNullException;
-import com.inbyte.commons.exception.PyrangeParamException;
+import com.inbyte.commons.exception.InbyteNullException;
+import com.inbyte.commons.exception.InbyteParamException;
 import com.inbyte.commons.model.dto.R;
 import com.inbyte.commons.util.StringUtil;
 import org.springframework.stereotype.Component;
@@ -30,9 +30,9 @@ public class CommonExceptionResolver {
      * @param e
      * @return
      */
-    @ExceptionHandler(value = PyrangeParamException.class)
+    @ExceptionHandler(value = InbyteParamException.class)
     @ResponseBody
-    public R pyrangeParamException(PyrangeParamException e) {
+    public R pyrangeParamException(InbyteParamException e) {
         if (e.getResult() != null) {
             return e.getResult();
         }
@@ -47,9 +47,9 @@ public class CommonExceptionResolver {
      * @param e
      * @return
      */
-    @ExceptionHandler(value = PyrangeNullException.class)
+    @ExceptionHandler(value = InbyteNullException.class)
     @ResponseBody
-    public R PyrangeNullException(PyrangeNullException e) {
+    public R PyrangeNullException(InbyteNullException e) {
         if (e.getResult() != null) {
             return e.getResult();
         }
