@@ -44,7 +44,7 @@ public class WxMpUserClient {
             log.info("微信用户静默登录, jsCode:{}", jsCode);
             WxMaJscode2SessionResult session = wxMaService.getUserService().getSessionInfo(jsCode);
             log.info("微信用户静默登录, 返回结果:{}", JSON.toJSONString(session));
-            return R.success(session);
+            return R.ok(session);
         } catch (WxErrorException e) {
             log.error("微信登录异常", e);
             return R.failure("微信登录异常, 稍等一下马上就好");
@@ -67,7 +67,7 @@ public class WxMpUserClient {
         }
 
         try {
-            return R.success(wxMaService.getUserService().getNewPhoneNoInfo(jsCode));
+            return R.ok(wxMaService.getUserService().getNewPhoneNoInfo(jsCode));
         } catch (WxErrorException e) {
             log.error("获取微信小程序用户手机号失败:{}", e);
             return R.error("获取微信小程序用户手机号失败");

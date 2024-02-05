@@ -48,7 +48,7 @@ public class WxMpSchemeClient {
             log.info("Scheme码生成, jsCode:{}", JSON.toJSONString(schemeRequest));
             String generate = wxMaService.getWxMaSchemeService().generate(schemeRequest);
             log.info("Scheme码生成, 返回结果:{}", generate);
-            return R.success("生成成功", generate);
+            return R.ok("生成成功", generate);
         } catch (WxErrorException e) {
             log.error("Scheme码生成", e);
             return R.failure("Scheme码生成, 稍等一下马上就好");

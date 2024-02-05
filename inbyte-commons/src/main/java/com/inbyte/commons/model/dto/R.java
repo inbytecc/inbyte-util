@@ -81,8 +81,8 @@ public class R<E> implements Serializable {
      *
      * @param msg 处理成功提示消息, 注意: 当响应结果为 String 类型时, 需要调用 success(String msg, T data) 重载方法, 否则会将结果设置为 msg 消息
      */
-    public static <T> R<T> success(String msg) {
-        return success(msg, null);
+    public static <T> R<T> ok(String msg) {
+        return ok(msg, null);
     }
 
     /**
@@ -92,8 +92,8 @@ public class R<E> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> R<T> success() {
-        return success(null, null);
+    public static <T> R<T> ok() {
+        return ok(null, null);
     }
 
     /**
@@ -103,8 +103,8 @@ public class R<E> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> R<T> success(T data) {
-        return success(null, data);
+    public static <T> R<T> ok(T data) {
+        return ok(null, data);
     }
 
     /**
@@ -115,7 +115,7 @@ public class R<E> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> R<T> success(String msg, T data) {
+    public static <T> R<T> ok(String msg, T data) {
         return new R(ResultStatus.Success.code, msg, data);
     }
 

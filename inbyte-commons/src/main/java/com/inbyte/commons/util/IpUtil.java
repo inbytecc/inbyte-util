@@ -160,6 +160,6 @@ public class IpUtil {
 
         int i = ip.lastIndexOf(".");
         String virtualIpEnd = ip.substring(0, i + 1) + ipEnd;
-        return R.success("请求成功", virtualIpEnd);
+        return R.ok("请求成功", virtualIpEnd);
     }
 }

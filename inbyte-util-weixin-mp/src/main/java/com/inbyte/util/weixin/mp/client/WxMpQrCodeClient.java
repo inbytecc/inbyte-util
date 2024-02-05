@@ -57,7 +57,7 @@ public class WxMpQrCodeClient {
             byte[] wxaCodeUnLimitBytes = wxMaService.getQrcodeService().createWxaCodeUnlimitBytes(
                     scene, page, true,"release",
                     width, true, null, true);
-            return R.success(wxaCodeUnLimitBytes);
+            return R.ok(wxaCodeUnLimitBytes);
         } catch (WxErrorException e) {
             log.error(e.getMessage(), e);
             return R.error(e.toString());
@@ -99,7 +99,7 @@ public class WxMpQrCodeClient {
             byte[] wxaCodeUnLimitBytes = wxMaService.getQrcodeService().createWxaCodeUnlimitBytes(
                     scene, page, true,"release",
                     width, true, null, true);
-            return R.success("获取成功", Base64.getEncoder().encodeToString(wxaCodeUnLimitBytes));
+            return R.ok("获取成功", Base64.getEncoder().encodeToString(wxaCodeUnLimitBytes));
         } catch (WxErrorException e) {
             log.error(e.getMessage(), e);
             return R.error(e.toString());
@@ -142,7 +142,7 @@ public class WxMpQrCodeClient {
                     param.getAutoColor() == 0 ? false : true,
                     wxMaCodeLineColor,
                     param.getIsHyaline() == 0 ? false : true);
-            return R.success("获取成功", Base64.getEncoder().encodeToString(wxaCodeUnLimitBytes));
+            return R.ok("获取成功", Base64.getEncoder().encodeToString(wxaCodeUnLimitBytes));
         } catch (WxErrorException e) {
             log.error(e.getMessage(), e);
             return R.error(e.toString());

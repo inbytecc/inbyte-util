@@ -8,18 +8,18 @@ import com.inbyte.commons.model.dto.R;
  * @author: chenjw
  * @date: 2020/8/14
  */
-public class PyrangeParamException extends RuntimeException {
+public class InbyteParamException extends RuntimeException {
 
 	private R r;
 
-	public PyrangeParamException() {
+	public InbyteParamException() {
 		super();
 	}
 
-	public PyrangeParamException(String msg) {
+	public InbyteParamException(String msg) {
 		super(msg);
 	}
-	public PyrangeParamException(R r) {
+	public InbyteParamException(R r) {
 		this.r = r;
 	}
 
@@ -31,8 +31,8 @@ public class PyrangeParamException extends RuntimeException {
 		this.r = r;
 	}
 
-	public static PyrangeParamException failure(String msg) {
-		return new PyrangeParamException(R.failure(msg));
+	public static InbyteParamException failure(String msg) {
+		return new InbyteParamException(R.failure(msg));
 	}
 
 }

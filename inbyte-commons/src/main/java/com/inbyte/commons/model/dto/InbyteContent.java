@@ -7,7 +7,7 @@ package com.inbyte.commons.model.dto;
  * @author chenjw
  * @date 2023/03/13
  */
-public class PyrangeContent {
+public class InbyteContent {
 
     /**
      * 数据类型
