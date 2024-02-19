@@ -186,9 +186,9 @@ public class R<E> implements Serializable {
         return new R(ResultStatus.Success.code, null, new Page<>(data));
     }
 
-    @Override
-    public String toString() {
-        return JSON.toJSONString(this);
-    }
+//    @Override
+//    public String toString() {
+//        return JSON.toJSONString(this);
+//    }
 
 }
