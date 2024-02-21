@@ -120,6 +120,18 @@ public class R<E> implements Serializable {
     }
 
     /**
+     * 业务处理成功
+     *
+     * @param data
+     * @param data
+     * @param <T>
+     * @return
+     */
+    public static <T> R<T> okString(String data) {
+        return new R(ResultStatus.Success.code, null, data);
+    }
+
+    /**
      * 业务处理失败
      *
      * @param msg
