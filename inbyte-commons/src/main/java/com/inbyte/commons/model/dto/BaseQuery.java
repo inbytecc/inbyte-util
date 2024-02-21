@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  *
  * @author chenjw
  */
-public class BaseQuery extends BasePage{
+public class BaseQuery extends BasePage {
 
     /**
      * 当前场馆ID
