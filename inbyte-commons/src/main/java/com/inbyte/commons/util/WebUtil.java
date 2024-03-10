@@ -123,21 +123,21 @@ public class WebUtil {
         }
         return requestUri;
     }
-//    /**
-//     * 获取请求信息-不包括JSON Body
-//     *
-//     * @return
-//     */
-//    public static StringBuilder getRequestInfo() {
-//        HttpServletRequest request = getCurrentRequest();
-//        StringBuilder sb = new StringBuilder();
-//        sb.append(Client_IP).append(IpUtil.getIPAddress(request));
-//        sb.append(Url).append(request.getRequestURL());
-//        sb.append(Request_Method).append(request.getMethod());
-//        sb.append(Query_String).append(defaultIfEmpty(request.getQueryString()));
-//        sb.append(Form_Param).append(defaultIfEmpty(JSON.toJSONString(request.getParameterMap())));
-//        return sb;
-//    }
+
+    /**
+     * 获取请求信息-不包括JSON Body
+     *
+     * @return
+     */
+    public static String getRequestInfo() {
+        HttpServletRequest request = getCurrentRequest();
+        StringBuilder sb = new StringBuilder();
+        sb.append("url:").append(request.getRequestURL());
+        sb.append(" requestMethod:").append(request.getMethod());
+        sb.append(" queryString:").append(defaultIfEmpty(request.getQueryString()));
+        sb.append(" requestBody:").append(defaultIfEmpty(JSON.toJSONString(request.getParameterMap())));
+        return sb.toString();
+    }
 
 //    /**
 //     * 获取请求信息-包括JSON Body

@@ -1,7 +1,6 @@
 package com.inbyte.commons.util;
 
-import com.inbyte.commons.exception.InbyteNullException;
-import com.inbyte.commons.exception.InbyteParamException;
+import com.inbyte.commons.exception.InbyteException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -22,13 +21,13 @@ public class Assert {
     public static void ok(Object o) {
         Set<ConstraintViolation<Object>> violations = VALIDATOR.validate(o);
         for (ConstraintViolation<Object> violation : violations) {
-            throw InbyteParamException.failure(violation.getMessage());
+            throw InbyteException.failure(violation.getMessage());
         }
     }
 
     public static void notNull(Object o, String message) {
         if (o == null) {
-            throw InbyteNullException.msg(message);
+            throw InbyteException.error(message);
         }
     }
 

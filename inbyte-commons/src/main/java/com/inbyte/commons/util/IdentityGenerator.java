@@ -302,15 +302,6 @@ public class IdentityGenerator {
         return sb.toString();
     }
 
-    /**
-     * 生成token
-     *
-     * @return
-     */
-    public static String generateToken() {
-        return UUID.randomUUID().toString();
-    }
-
     private static String get(String key) {
         String val = MAP.get(key);
         if (val == null) {
