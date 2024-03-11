@@ -174,7 +174,7 @@ public class PdfUtil {
 
         data.put("venueName", "123东方启明星未来之光校区x");
         data.put("venueAddress", "天荟未来之光城6号楼204（地铁2号线杜甫村站B口200米）");
-        data.put("companyName", "杭州湃橙体育科技有限公司");
+        data.put("companyName", "易思网络");
         data.put("orderNo", "CRS081100104232173947");
         data.put("courseName", "精英私教班东方");
         data.put("classHour", 66);

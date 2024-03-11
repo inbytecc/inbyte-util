@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 
 /**
  * 四则运算工具
- * 杭州湃橙体育科技有限公司
+ * 易思网络
  *
  * @author chenjw
  * @date 2016年06月30日

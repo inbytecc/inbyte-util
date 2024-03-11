@@ -23,7 +23,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 /**
- * 杭州湃橙体育科技有限公司
+ * 易思网络
  * Web工具类
  *
  * @author chenjw

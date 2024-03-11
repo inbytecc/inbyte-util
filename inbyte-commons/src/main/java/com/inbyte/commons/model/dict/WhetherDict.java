@@ -2,7 +2,7 @@ package com.inbyte.commons.model.dict;
 
 /**
  * 是否
- * 杭州湃橙体育科技有限公司
+ * 易思网络
  * @author chenjw
  * @date 2016年08月29日
  */
