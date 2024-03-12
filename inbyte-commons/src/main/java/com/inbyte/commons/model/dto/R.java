@@ -123,23 +123,10 @@ public class R<E> implements Serializable {
      * 业务处理成功
      *
      * @param data
-     * @param <T>
      * @return
      */
-    public static <T> R<T> data(String data) {
-        return new R(ResultStatus.Success.code, null, data);
-    }
-
-    /**
-     * 业务处理成功
-     *
-     * @param data
-     * @param data
-     * @param <T>
-     * @return
-     */
-    public static <T> R<T> data(T data) {
-        return new R(ResultStatus.Success.code, null, data);
+    public static R<String> okStr(String data) {
+        return ok(null, data);
     }
 
     /**
