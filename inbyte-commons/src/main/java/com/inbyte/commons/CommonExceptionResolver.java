@@ -1,5 +1,6 @@
 package com.inbyte.commons;
 
+import com.inbyte.commons.api.SystemAlarm;
 import com.inbyte.commons.exception.BizException;
 import com.inbyte.commons.exception.InbyteException;
 import com.inbyte.commons.model.dto.R;

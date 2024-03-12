@@ -258,8 +258,8 @@ public class IdentityGenerator {
      */
     public static String generateMobileVerifyCode() {
         StringBuilder validateCode = new StringBuilder();
-        return validateCode.append(
-                (int) (Math.random() * 10))
+        return validateCode
+                .append((int) (Math.random() * 10))
                 .append((int) (Math.random() * 10))
                 .append((int) (Math.random() * 10))
                 .append((int) (Math.random() * 10)).toString();

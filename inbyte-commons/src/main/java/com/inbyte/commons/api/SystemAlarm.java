@@ -1,4 +1,4 @@
-package com.inbyte.commons;
+package com.inbyte.commons.api;
 
 /**
  * 报警通知
