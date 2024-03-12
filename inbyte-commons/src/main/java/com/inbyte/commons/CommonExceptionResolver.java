@@ -45,11 +45,7 @@ public class CommonExceptionResolver {
     /**
      * 请求参数错误
      */
-    public static final String Default_Message = "请求参数错误";
-//    /**
-//     * 默认错误信息
-//     */
-//    public static final String Default_Error_Message = "服务器异常, 休息一下, 马上回来";
+    public static final String Default_Message = "服务器异常, 休息一下, 马上回来";
 
     /**
      * 未知异常拦截
