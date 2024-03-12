@@ -127,7 +127,7 @@ public class R<E> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> R<T> okString(String data) {
+    public static <T> R<T> data(String data) {
         return new R(ResultStatus.Success.code, null, data);
     }
 
