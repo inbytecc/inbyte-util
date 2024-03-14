@@ -214,55 +214,63 @@ public class IdentityGenerator {
         return sb.toString();
     }
 
+//    /**
+//     * 生成二维码值
+//     *
+//     * @return
+//     */
+//    public static String generateVerifyCode(int verifyCodeTypeDictCode) {
+//        int verifySerialNo = Verify_Code_SERIALNO.incrementAndGet();
+//        if (verifySerialNo == 999) {
+//            Verify_Code_SERIALNO.set(0);
+//        }
+//        Date date = new Date();
+//        String yy = new SimpleDateFormat("yy").format(date);
+//        String mm = new SimpleDateFormat("MM").format(date);
+//        String dd = new SimpleDateFormat("dd").format(date);
+//        String hh = new SimpleDateFormat("HH").format(date);
+//        String minute = new SimpleDateFormat("mm").format(date);
+//        String ss = new SimpleDateFormat("ss").format(date);
+//        String sss = new SimpleDateFormat("SSS").format(date);
+//
+//        List<String> list = new ArrayList<>();
+//        list.add(yy);
+//        list.add(mm);
+//        list.add(dd);
+//        list.add(hh);
+//        list.add(minute);
+//        list.add(ss);
+//        list.add(sss);
+//        list.add(StringUtil.leftPad(String.valueOf(verifySerialNo), 3, "0"));
+//        Collections.shuffle(list);
+//
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(verifyCodeTypeDictCode);
+//        list.forEach(sb::append);
+//        // 前二位订单列表编码
+//        return sb.toString();
+//    }
+
     /**
-     * 生成二维码值
+     * 生成指定长度数字验证码
      *
      * @return
      */
-    public static String generateVerifyCode(int verifyCodeTypeDictCode) {
-        int verifySerialNo = Verify_Code_SERIALNO.incrementAndGet();
-        if (verifySerialNo == 999) {
-            Verify_Code_SERIALNO.set(0);
+    public static String generateRandomDigitalCode(int length) {
+        StringBuilder validateCode = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            validateCode.append((int) (Math.random() * 10));
         }
-        Date date = new Date();
-        String yy = new SimpleDateFormat("yy").format(date);
-        String mm = new SimpleDateFormat("MM").format(date);
-        String dd = new SimpleDateFormat("dd").format(date);
-        String hh = new SimpleDateFormat("HH").format(date);
-        String minute = new SimpleDateFormat("mm").format(date);
-        String ss = new SimpleDateFormat("ss").format(date);
-        String sss = new SimpleDateFormat("SSS").format(date);
-
-        List<String> list = new ArrayList<>();
-        list.add(yy);
-        list.add(mm);
-        list.add(dd);
-        list.add(hh);
-        list.add(minute);
-        list.add(ss);
-        list.add(sss);
-        list.add(StringUtil.leftPad(String.valueOf(verifySerialNo), 3, "0"));
-        Collections.shuffle(list);
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(verifyCodeTypeDictCode);
-        list.forEach(sb::append);
-        // 前二位订单列表编码
-        return sb.toString();
+        return validateCode.toString();
     }
 
     /**
-     * 生成手机验证码
+     * 生成 6 位数字验证码
      *
      * @return
      */
-    public static String generateMobileVerifyCode() {
-        StringBuilder validateCode = new StringBuilder();
-        return validateCode
-                .append((int) (Math.random() * 10))
-                .append((int) (Math.random() * 10))
-                .append((int) (Math.random() * 10))
-                .append((int) (Math.random() * 10)).toString();
+    public static String generateRandomDigitalCode() {
+        return generateRandomDigitalCode(6);
     }
 
     /**
@@ -310,4 +318,7 @@ public class IdentityGenerator {
         return val;
     }
 
+    public static void main(String[] args) {
+        System.out.println(generateOrderNo("1"));
+    }
 }
