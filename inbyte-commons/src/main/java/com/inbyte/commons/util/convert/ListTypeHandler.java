@@ -13,50 +13,52 @@ import java.util.List;
 
 /**
  * Mybatis List 数据转换处理类
+ *
  * @author chenjw
  * @date 2023/3/2
  */
 public class ListTypeHandler extends BaseTypeHandler<List> {
 
-	public static final List EMPTY_JSON_ARRAY = new ArrayList();
+    public static final List EMPTY_JSON_ARRAY = new ArrayList();
 
-	/**
-	 * Json编码，对象 ==> Json字符串
-	 */
-	@Override
-	public void setNonNullParameter(PreparedStatement ps, int i, List parameter, JdbcType jdbcType) throws SQLException {
-		String value = parameter.toString();
-		if (jdbcType == null) {
-			ps.setObject(i, value);
-		} else {
-			ps.setObject(i, value, jdbcType.TYPE_CODE);
-		}
-	}
+    /**
+     * Json编码，对象 ==> Json字符串
+     */
+    @Override
+    public void setNonNullParameter(PreparedStatement ps, int i, List parameter, JdbcType jdbcType) throws SQLException {
+//		String value = parameter.toString();
+//		if (jdbcType == null) {
+//			ps.setObject(i, value);
+//		} else {
+//			ps.setObject(i, value, jdbcType.TYPE_CODE);
+//		}
+        ps.setObject(i, JSON.toJSONString(parameter));
+    }
 
-	/**
-	 * Json解码，Json字符串 ==> 对象
-	 */
-	@Override
-	public List getNullableResult(ResultSet rs, String columnName) throws SQLException {
-		String result = rs.getString(columnName);
-		return result == null ? EMPTY_JSON_ARRAY : JSON.parseArray(result);
-	}
+    /**
+     * Json解码，Json字符串 ==> 对象
+     */
+    @Override
+    public List getNullableResult(ResultSet rs, String columnName) throws SQLException {
+        String result = rs.getString(columnName);
+        return result == null ? EMPTY_JSON_ARRAY : JSON.parseArray(result);
+    }
 
-	/**
-	 * Json解码，Json字符串 ==> 对象
-	 */
-	@Override
-	public List getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-		String result = rs.getString(columnIndex);
-		return result == null ? EMPTY_JSON_ARRAY : JSON.parseArray(result);
-	}
+    /**
+     * Json解码，Json字符串 ==> 对象
+     */
+    @Override
+    public List getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+        String result = rs.getString(columnIndex);
+        return result == null ? EMPTY_JSON_ARRAY : JSON.parseArray(result);
+    }
 
-	/**
-	 * Json解码，Json字符串 ==> 对象
-	 */
-	@Override
-	public List getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-		String result = cs.getString(columnIndex);
-		return result == null ? EMPTY_JSON_ARRAY : JSON.parseArray(result);
-	}
+    /**
+     * Json解码，Json字符串 ==> 对象
+     */
+    @Override
+    public List getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+        String result = cs.getString(columnIndex);
+        return result == null ? EMPTY_JSON_ARRAY : JSON.parseArray(result);
+    }
 }
