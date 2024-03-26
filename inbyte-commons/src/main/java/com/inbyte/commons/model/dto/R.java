@@ -180,6 +180,16 @@ public class R<E> implements Serializable {
         return new R(status.code, msg, data);
     }
 
+    public static <T> R<T> set(Integer status) {
+        return new R(status, null, null);
+    }
+    public static <T> R<T> set(Integer status, String msg) {
+        return new R(status, msg, null);
+    }
+    public static <T> R<T> set(Integer status, String msg, T data) {
+        return new R(status, msg, data);
+    }
+
     public static <T> R<T> valueOf(R resp) {
         return new R(resp.getStatus(), resp.getMsg(), null);
     }
